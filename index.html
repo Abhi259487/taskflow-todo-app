@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TaskFlow - Advanced To-Do App</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="app-container">
+
+        <!-- Header -->
+        <header class="app-header">
+            <div>
+                <p class="eyebrow">PERSONAL PRODUCTIVITY</p>
+                <h1>TaskFlow</h1>
+                <p class="subtitle">Organize your day, one task at a time.</p>
+            </div>
+
+            <div class="header-icon" aria-hidden="true">
+                ✓
+            </div>
+        </header>
+
+
+        <!-- Task Summary -->
+        <section class="summary-grid" aria-label="Task summary">
+
+            <div class="summary-card">
+                <span class="summary-label">Total Tasks</span>
+                <strong id="totalTasks">0</strong>
+            </div>
+
+            <div class="summary-card">
+                <span class="summary-label">Active</span>
+                <strong id="activeTasks">0</strong>
+            </div>
+
+            <div class="summary-card">
+                <span class="summary-label">Completed</span>
+                <strong id="completedTasks">0</strong>
+            </div>
+
+        </section>
+
+
+        <!-- Add Task -->
+        <section class="task-form-section">
+
+            <h2>Add a new task</h2>
+
+            <form id="taskForm" class="task-form">
+
+                <label for="taskInput" class="sr-only">
+                    Enter your task
+                </label>
+
+                <input
+                    type="text"
+                    id="taskInput"
+                    placeholder="What needs to be done?"
+                    autocomplete="off"
+                    maxlength="150"
+                    required
+                >
+
+                <button type="submit" id="addBtn">
+                    <span aria-hidden="true">+</span>
+                    Add Task
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- Task Controls -->
+        <section class="task-controls">
+
+            <div class="section-heading">
+                <h2>Your Tasks</h2>
+                <span id="taskCount" class="task-count">0 tasks</span>
+            </div>
+
+            <div class="controls-row">
+
+                <div
+                    class="filter-buttons"
+                    role="group"
+                    aria-label="Filter tasks"
+                >
+                    <button
+                        type="button"
+                        class="filter-btn active"
+                        data-filter="all"
+                    >
+                        All
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-btn"
+                        data-filter="active"
+                    >
+                        Active
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-btn"
+                        data-filter="completed"
+                    >
+                        Completed
+                    </button>
+                </div>
+
+                <button
+                    type="button"
+                    id="clearCompletedBtn"
+                    class="clear-btn"
+                >
+                    Clear completed
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Task List -->
+        <section class="tasks-section">
+
+            <ul id="taskList" class="task-list">
+                <!-- JavaScript will add tasks here -->
+            </ul>
+
+            <div id="emptyState" class="empty-state">
+                <div class="empty-icon" aria-hidden="true">✓</div>
+
+                <h3 id="emptyTitle">No tasks yet</h3>
+
+                <p id="emptyMessage">
+                    Add your first task and start being productive.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>Your tasks are saved locally in your browser.</p>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
